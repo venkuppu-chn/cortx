@@ -25,6 +25,7 @@ jobs:
         with:
           ref: main
           token: ${{ secrets.ACCESS_TOKEN }}
+          submodules: 'recursive'
           
       # Install dotenv python package to load tokens in script
       - name: Install dependencies
