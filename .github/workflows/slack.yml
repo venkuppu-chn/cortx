@@ -49,8 +49,10 @@ jobs:
           OPENSTACK_COOKIE: ${{ secrets.OPENSTACK_COOKIE }}
           SLACK_OAUTH: ${{ secrets.SLACK_OAUTH }}
         run: |
-          python3 slack_user_count.py
-
+          # python3 slack_user_count.py
+          echo "`date +'%Y-%m-%d %H:%M:%S'`" > slack_users_stats.pickle
+          mv slack_users_stats.pickle ../pickles/slack_users_stats.pickle
+          
       # Commmit the slack pickle file local repo
       - name: Commit files
         run: |
